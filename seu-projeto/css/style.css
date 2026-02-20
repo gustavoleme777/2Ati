@@ -1,9 +1,9 @@
-﻿*{box-sizing:border-box}
-body{font-family:Segoe UI,Arial,sans-serif;background:#eaf6ff;color:#0b1220;padding:20px}
-.container{max-width:640px;margin:0 auto;background:#fff;padding:16px;border-radius:8px}
+﻿.container{max-width:640px;margin:0 auto;background:#fff;padding:16px;border-radius:8px}
 form{display:flex;gap:8px}
 input{flex:1;padding:8px;border:1px solid #ccd;border-radius:6px}
-button{padding:8px 12px;border-radius:6px;border:0;background:#1e90ff;color:#fff;cursor:pointer}
+button{padding:8px 12px;border-radius:6px;border:0;background:#1e90ff;color:#fff}
+body{font-family:Segoe UI,Arial,sans-serif;background:#eaf6ff;color:#0b1220;padding:20px}
+*{box-sizing:border-box}
 #mensagem-erro{color:#b00020;margin-top:8px;min-height:18px}
 ul{list-style:none;padding:0;margin:12px 0}
 li{padding:8px;border-bottom:1px solid #eee}
