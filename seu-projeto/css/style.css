@@ -1,16 +1,9 @@
-﻿/* style.css - Estilo simples para a Lista de Tarefas */
-*{box-sizing:border-box}
-body{font-family:Segoe UI,Helvetica,Arial,sans-serif;background:#f4f6f8;color:#222;padding:24px}
-.container{max-width:640px;margin:0 auto;background:#fff;padding:20px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
-h1{margin-top:0}
-form{display:flex;gap:8px;align-items:center;margin-bottom:8px}
-form input[type=text]{flex:1;padding:8px;border:1px solid #ccd; border-radius:4px}
-form button{padding:8px 12px;border-radius:4px;border:0;background:#0b79d0;color:#fff;cursor:pointer}
-form button:hover{opacity:.95}
-.mensagem{color:#b00020;margin-bottom:8px;min-height:20px}
-.mensagem.hidden{display:none}
-#lista-tarefas{list-style:none;padding-left:0;margin-top:0}
-#lista-tarefas li{padding:8px 10px;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center}
-.tarefa-text{flex:1}
-.tarefa-remover{background:transparent;border:0;color:#d00;cursor:pointer}
-.small{font-size:0.9rem;color:#666}
+﻿*{box-sizing:border-box}
+body{font-family:Segoe UI,Arial,sans-serif;background:#eaf6ff;color:#0b1220;padding:20px}
+.container{max-width:640px;margin:0 auto;background:#fff;padding:16px;border-radius:8px}
+form{display:flex;gap:8px}
+input{flex:1;padding:8px;border:1px solid #ccd;border-radius:6px}
+button{padding:8px 12px;border-radius:6px;border:0;background:#1e90ff;color:#fff;cursor:pointer}
+#mensagem-erro{color:#b00020;margin-top:8px;min-height:18px}
+ul{list-style:none;padding:0;margin:12px 0}
+li{padding:8px;border-bottom:1px solid #eee}
