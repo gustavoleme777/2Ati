@@ -1,50 +1,56 @@
-﻿// Código muito simples
+﻿// Lista simples de tarefas
+let tasks = [];
+
 const form = document.getElementById('form');
 const input = document.getElementById('taskInput');
 const list = document.getElementById('taskList');
-const errorBox = document.getElementById('error');
+const error = document.getElementById('error');
 const count = document.getElementById('count');
 
-const tasks = [];
+// Adicionar tarefa
+form.addEventListener('submit', e => {
+    e.preventDefault();
+    const text = input.value.trim();
+    if (!text) {
+        error.textContent = 'Digite algo';
+        return;
+    }
+    tasks.push(text);
+    input.value = '';
+    error.textContent = '';
+    updateList();
+});
 
-function render(){
-	list.innerHTML = '';
-		tasks.forEach((t,i)=>{
-			const li = document.createElement('li');
-			// Botão Editar (data-action) e Remover
-			li.innerHTML = `<span>${t}</span>
-				<button class="edit" data-i="${i}" data-action="edit">Editar</button>
-				<button class="remove" data-i="${i}" data-action="remove">Remover</button>`;
-			list.appendChild(li);
-		});
-	count.textContent = tasks.length;
+// Atualizar lista
+function updateList() {
+    list.innerHTML = '';
+    count.textContent = tasks.length;
+    tasks.forEach((task, i) => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+            <span>${task}</span>
+            <div>
+                <button class="edit" data-i="${i}">Editar</button>
+                <button class="remove" data-i="${i}">Excluir</button>
+            </div>
+        `;
+        list.appendChild(li);
+    });
 }
 
-form.addEventListener('submit', e=>{
-	e.preventDefault();
-	const v = input.value.trim();
-	if(!v){ errorBox.textContent='Digite algo'; return }
-	tasks.push(v);
-	input.value=''; errorBox.textContent=''; render();
+// Editar ou excluir
+list.addEventListener('click', e => {
+    if (e.target.tagName !== 'BUTTON') return;
+    const i = +e.target.dataset.i;
+    if (e.target.classList.contains('remove')) {
+        tasks.splice(i, 1);
+    } else if (e.target.classList.contains('edit')) {
+        const newText = prompt('Editar:', tasks[i]);
+        if (newText !== null && newText.trim()) {
+            tasks[i] = newText.trim();
+        }
+    }
+    updateList();
 });
 
-list.addEventListener('click', e=>{
-	if(e.target.tagName==='BUTTON'){
-		const i = +e.target.dataset.i;
-		const action = e.target.dataset.action;
-		if(action === 'remove'){
-			tasks.splice(i,1);
-			render();
-		} else if(action === 'edit'){
-			// Pergunta ao usuário o novo texto; se vazio, não altera
-			const novo = prompt('Editar tarefa:', tasks[i]);
-			if(novo === null) return; // usuário cancelou
-			const v = novo.trim();
-			if(!v){ alert('Texto vazio. Edição cancelada.'); return }
-			tasks[i] = v;
-			render();
-		}
-	}
-});
-
-render();
+updateList();

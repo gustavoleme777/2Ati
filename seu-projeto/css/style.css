@@ -1,22 +1,94 @@
-﻿.card{max-width:700px;margin:20px auto;background:#fff;padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,.06)}
-header{max-width:700px;margin:10px auto;text-align:center}
-body{font-family:Segoe UI,Arial,sans-serif;background:linear-gradient(180deg,#eaf6ff,#f6fbff);color:#0b1220;padding:18px}
-form{display:flex;gap:8px;margin-bottom:8px}
-input{flex:1;padding:10px;border:1px solid #e0e7ff;border-radius:8px}
-button{padding:10px 14px;border-radius:8px;border:0;background:#2563eb;color:#fff}
-.err{color:#b00020;min-height:18px;margin-bottom:6px}
-.meta{color:#6b7280;font-size:0.9rem;margin-bottom:8px}
-ul{list-style:none;padding:0;margin:0}
-/* Estilos curtos e claros */
-body{font-family:Segoe UI,Arial,sans-serif;background:#f6fbff;color:#0b1220;padding:18px}
-h1{margin:0 0 12px}
-form{display:flex;gap:8px;margin-bottom:8px}
-input{flex:1;padding:8px;border:1px solid #e0e7ff;border-radius:6px}
-button{padding:8px 12px;border-radius:6px;border:0;background:#2563eb;color:#fff}
-.err{color:#b00020;min-height:18px;margin-bottom:6px}
-.meta{color:#6b7280;font-size:.9rem;margin-bottom:8px}
-ul{list-style:none;padding:0;margin:0}
-li{padding:10px;border:1px solid #dcdcdc;border-radius:8px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center}
-li button{background:transparent;border:1px solid #ef4444;color:#ef4444;padding:6px 10px;border-radius:6px}
-li button.edit{border-color:#f59e0b;color:#b45309;margin-right:6px}
-li button.remove{border-color:#ef4444;color:#ef4444}
+﻿body {
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: #000;
+    padding: 10px;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    margin: 0 0 10px 0;
+    font-size: 24px;
+}
+
+form {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input {
+    flex: 1;
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+button {
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #f0f0f0;
+    color: #000;
+    cursor: pointer;
+}
+
+.err {
+    color: #d00;
+    min-height: 16px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.meta {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+li {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fafafa;
+}
+
+li button {
+    background: transparent;
+    border: 1px solid #ccc;
+    color: #666;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+li button.edit {
+    border-color: #f90;
+    color: #c60;
+    margin-right: 5px;
+}
+
+li button.remove {
+    border-color: #d00;
+    color: #d00;
+}
